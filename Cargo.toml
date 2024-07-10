@@ -1,0 +1,15 @@
+[package]
+name = "weather_sensor_arduino"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+arduino-hal = "0.4.0"
+panic-halt = "0.2.0"
+
+[profile.release]
+codegen-units = 1
+debug = true
+lto = true
+opt-level = "s"
+panic = "abort"

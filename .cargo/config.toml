@@ -1,0 +1,9 @@
+[target.avr-atmega328p]
+runner = "avrdude -c arduino -P /dev/ttyUSB0 -p atmega328p -U flash:w:target/avr-atmega328p/release/arduino_project.elf:e"
+rustflags = [
+  "-C", "link-arg=-Wl,--gc-sections",
+  "-C", "link-arg=-mmcu=atmega328p",
+]
+
+[build]
+target = "avr-atmega328p"
